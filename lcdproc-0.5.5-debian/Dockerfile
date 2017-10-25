@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:wheezy-slim
 
 EXPOSE 13666
 
