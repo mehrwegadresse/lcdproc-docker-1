@@ -8,20 +8,20 @@ on the offical Debian packages.
 
 Images are tagged according to the installed LCDproc version. All images are build using Debain GNU/Linux.
 
-* [`0.5.7`, `latest` Dockerfile](https://github.com/liske/lcdproc-docker/blob/master/lcdproc-0.5.7-debian/Dockerfile)
+* [`0.5.7`, `latest` Dockerfile](https://github.com/DE-IBH/lcdproc-docker/blob/master/lcdproc-0.5.7-debian/Dockerfile)
 
-  [![Layers](https://images.microbadger.com/badges/image/liske/lcdproc:latest.svg)](https://images.microbadger.com/badges/image/liske/lcdproc:latest)
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/lcdproc:latest.svg)](https://images.microbadger.com/badges/image/ibhde/lcdproc:latest)
   This image is build using *Debian stretch* and should be considered **stable**.
 
-* [`0.5.9` Dockerfile](https://github.com/liske/lcdproc-docker/blob/master/lcdproc-0.5.9-debian/Dockerfile)
+* [`0.5.9` Dockerfile](https://github.com/DE-IBH/lcdproc-docker/blob/master/lcdproc-0.5.9-debian/Dockerfile)
 
-  [![Layers](https://images.microbadger.com/badges/image/liske/lcdproc:0.5.9.svg)](https://images.microbadger.com/badges/image/liske/lcdproc:0.5.9)
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/lcdproc:0.5.9.svg)](https://images.microbadger.com/badges/image/ibhde/lcdproc:0.5.9)
   This image is build using *Debian buster* and should be considered **unstable**.
 
 
-* [`0.5.5` Dockerfile](https://github.com/liske/lcdproc-docker/blob/master/lcdproc-0.5.5-debian/Dockerfile)
+* [`0.5.5` Dockerfile](https://github.com/DE-IBH/lcdproc-docker/blob/master/lcdproc-0.5.5-debian/Dockerfile)
 
-  [![Layers](https://images.microbadger.com/badges/image/liske/lcdproc:0.5.5.svg)](https://images.microbadger.com/badges/image/liske/lcdproc:0.5.5)
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/lcdproc:0.5.5.svg)](https://images.microbadger.com/badges/image/ibhde/lcdproc:0.5.5)
   This image is build using *Debian wheezy* and should be considered **obsolete**.
 
 
@@ -32,7 +32,7 @@ The default command runs `LCDd` in foreground. You need to override the command 
 ### docker run
 
 ```
-$ docker run --rm -v /path/to/conf/LCDd.conf:/etc/LCDd.conf:ro -p 13666 --privileged liske/lcdproc
+$ docker run --rm -v /path/to/conf/LCDd.conf:/etc/LCDd.conf:ro -p 13666 --privileged ibhde/lcdproc
 ```
 
 ### docker-compose
@@ -42,7 +42,7 @@ $ docker run --rm -v /path/to/conf/LCDd.conf:/etc/LCDd.conf:ro -p 13666 --privil
 version: '3'
 services:
   lcdd:
-    image: liske/lcdproc
+    image: ibhde/lcdproc
     volumes:
       - /path/to/conf/LCDd.conf:/etc/LCDd.conf:ro
     ports:
@@ -51,7 +51,7 @@ services:
     restart: always
 
   lcdproc:
-    image: liske/lcdproc
+    image: ibhde/lcdproc
     command: [ "lcdproc", "-s", "lcdd", "-f", "-c", "/etc/lcdproc.conf", "L" ]
     hostname: myhostname
     volumes:

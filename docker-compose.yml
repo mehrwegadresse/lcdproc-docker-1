@@ -2,7 +2,7 @@
 version: '3'
 services:
   lcdd:
-    image: liske/lcdproc
+    image: ibhde/lcdproc
     volumes:
       - /path/to/conf/LCDd.conf:/etc/LCDd.conf:ro
     ports:
@@ -11,7 +11,7 @@ services:
     restart: always
 
   lcdproc:
-    image: liske/lcdproc
+    image: ibhde/lcdproc
     command: [ "lcdproc", "-s", "lcdd", "-f", "-c", "/etc/lcdproc.conf", "L" ]
     hostname: myhostname
     volumes:
